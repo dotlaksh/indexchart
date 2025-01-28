@@ -25,14 +25,7 @@
     return percentage.toFixed(2) + '%';
   }
 
-  function formatVolume(volume: number): string {
-    if (volume >= 1000000) {
-      return (volume / 1000000).toFixed(2) + 'M';
-    } else if (volume >= 1000) {
-      return (volume / 1000).toFixed(2) + 'K';
-    }
-    return volume.toString();
-  }
+  
 
   function calculateMovingAverage(data: StockData[], period: number): { time: number, value: number }[] {
     let result: { time: number, value: number }[] = [];
@@ -112,30 +105,10 @@
       },
     });
 
-    volumeSeries = chart.addHistogramSeries({
-      priceFormat: {
-        type: 'volume',
-      },
-      priceScaleId: 'volume',
-      scaleMargins: {
-        top: 0.8,
-        bottom: 0,
-      },
-      lineWidth: 1,
-    }, { pane: "volume" });
+    
 
     maSeries = chart.addLineSeries({ color: '#3b82f6', lineWidth: 1 });
-    
-    
-
-    chart.priceScale('volume').applyOptions({
-      scaleMargins: {
-        top: 0.7,
-        bottom: 0,
-      },
-      borderColor: '#444444',
-    });
-
+  
     barSeries.priceScale().applyOptions({
       scaleMargins: {
         top: 0.2,
@@ -170,28 +143,12 @@
         };
       });
 
-      const volumeData = data.map(({ time, close, volume }, index) => {
-        const previousClose = index > 0 ? data[index - 1].close : close;
-        const isUp = close >= previousClose;
-        return {
-          time,
-          value: volume,
-          color: isUp ? 'rgba(58, 171, 58, 0.75)' : 'rgba(255, 0, 0, 0.75)',
-          lineWidth: 1,
-        };
-      });
-
-      
-      
-  
-      
       
     
 
       barSeries.setData(barData);
-      volumeSeries.setData(volumeData);
 
-      maSeries.setData(calculateMovingAverage(data, 10));
+      maSeries.setData(calculateMovingAverage(data, 50));
       
       
 
