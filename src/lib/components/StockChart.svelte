@@ -127,7 +127,7 @@
   }
 
   function updateChartData() {
-    if (barSeries && volumeSeries && data && data.length > 0) {
+    if (barSeries && data && data.length > 0) {
       const barData = data.map(({ time, high, low, close }, index) => {
         const previousClose = index > 0 ? data[index - 1].close : close;
         const isUp = close >= previousClose;
