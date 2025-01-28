@@ -11,7 +11,6 @@
   let legendContainer: HTMLElement;
   let chart: any;
   let barSeries: any;
-  let volumeSeries: any;
   let maSeries: any;
   
   
@@ -41,7 +40,6 @@
 
   function updateLegend(param: any) {
     const barData = param.seriesData.get(barSeries);
-    const volumeData = param.seriesData.get(volumeSeries);
     if (barData) {
       const dataPoint = data.find((d) => d.time === barData.time);
       if (!dataPoint) return;
