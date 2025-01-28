@@ -146,7 +146,7 @@
 
       barSeries.setData(barData);
 
-      maSeries.setData(calculateMovingAverage(data, 50));
+      maSeries.setData(calculateMovingAverage(data, 10));
       
       
 
