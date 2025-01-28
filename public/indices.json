@@ -1,9 +1,9 @@
 [
     { "Symbol": "^NSEI" },
     { "Symbol": "^NSEBANK" },
+    { "Symbol": "^CRSLDX" },
     { "Symbol": "^CNXIT" },
     { "Symbol": "^CNXFMCG" },
-    { "Symbol": "^CNXPHARMA" },
     { "Symbol": "^CNXAUTO" },
     { "Symbol": "^CNXENERGY" },
     { "Symbol": "^CNXREALTY" },
@@ -11,9 +11,7 @@
     { "Symbol": "^CNXMEDIA" },
     { "Symbol": "^CNXINFRA" },
     { "Symbol": "^CNXPSUBANK" },
-    { "Symbol": "^CNXCOMMODITIES" },
-    { "Symbol": "^CNXCONSUMPTION" },
-    { "Symbol": "^CNXFINANCE" },
-    { "Symbol": "^CNXSERVICE" },
-    { "Symbol": "^CNXMIDCAP" }
+    { "Symbol": "^CNXCMDT" },
+    { "Symbol": "^CNXCONSUM" },
+    { "Symbol": "^CNXSERVICE" }
   ]
